@@ -17,9 +17,9 @@ predictor = Predictor("breeds.txt", "best_local_refined.h5", 224)
 @app.get("/")
 def get_model_summary():
     """Returns a string with the model summary"""
-    stringlist = []
-    predictor.model.summary(print_fn=lambda x: stringlist.append(x))
-    return {'summary': stringlist}
+    string_list = []
+    predictor.model.summary(print_fn=lambda x: string_list.append(x))
+    return {'summary': string_list}
 
 
 @app.post("/predict", response_model=PredictionSchema)

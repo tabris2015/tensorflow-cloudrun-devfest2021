@@ -2,6 +2,7 @@ import numpy as np
 from PIL import Image
 import tensorflow as tf
 
+
 class Predictor:
     def __init__(self, labels_path: str, model_path: str, image_size: int):
         self.labels_path = labels_path
