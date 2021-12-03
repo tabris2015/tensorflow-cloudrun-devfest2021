@@ -24,6 +24,7 @@ def get_model_summary():
 
 @app.post("/predict", response_model=PredictionSchema)
 def predict_image(n_top:int = 3, file: UploadFile = File(...)):
+    """Receives a file and make a prediction on it"""
     prediction = predictor.predict_file(file.file, n_top=n_top)
 
     return PredictionSchema(
